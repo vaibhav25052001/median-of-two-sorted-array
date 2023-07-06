@@ -1,0 +1,24 @@
+vector<int>ans(nums1.size()+nums2.size());
+    int i=0,j=0,k=0;
+    double med;
+    while(i<nums1.size() && j<nums2.size()){
+        if(nums1[i]<nums2[j])
+        ans[k++]=nums1[i++];
+
+        else
+        ans[k++]=nums2[j++];
+      }
+      while(i<nums1.size()){
+          ans[k++]=nums1[i++];
+      }
+      while(j<nums2.size()){
+          ans[k++]=nums2[j++];
+      }
+      int a=nums1.size(),b=nums2.size();
+      if((a+b)%2==1)
+      med=ans[(a+b)/2];
+
+       else
+       med=(float)(ans[(a+b)/2]+ans[((a+b)/2)-1])/2;
+
+        return med;
